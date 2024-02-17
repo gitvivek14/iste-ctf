@@ -1,9 +1,9 @@
 import React from 'react'
-import Particle from '@/components/Particle'
+import Particle from '../components/Particle'
 import { TypeAnimation } from 'react-type-animation';
 import Form from '../components/Form';
-import Navbar from '@/components/Navbar';
-import Button from '@/components/Button';
+import Navbar from '../components/Navbar';
+import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 
 

@@ -12,10 +12,6 @@ import PrivateRoute from './components/PrivateRoute'
 
 
 function App() {
-  // const socket  = io("http://localhost:3000")
-  // socket.on("welcome",(s)=>{
-  //   console.log(`Welcome ${s}`)
-  // })
   return (
     <>
       <div className="w-[100vw] h-[100vh] min-h-screen bg-[#000814] overflow-y-auto bghome ">

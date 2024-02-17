@@ -11,7 +11,7 @@ import { FaRegLightbulb } from "react-icons/fa";
 import { useDispatch,useSelector } from 'react-redux'
 import {getQuestions} from "../../services/operations/gameapi"
 
-import QuesModal from '@/components/QuesModal'
+import QuesModal from '../../components/QuesModal'
 const Level = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false)
