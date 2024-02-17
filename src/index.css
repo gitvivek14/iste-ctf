@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "Hack";
+    src: local("Hack-Bold"),
+     url("./fonts/Hack/Hack-Bold.ttf") format("truetype");
+    font-weight: bolder;
+   }
+   @font-face {
+    font-family: "Hackk";
+    src: local("Hack-Regular"),
+     url("./fonts/Hack/Hack-Regular.ttf") format(".woff");
+    font-weight: bold;
+   }
+   .bghome{
+    background-image: url("../src/assets/card/bg--world.png");
+    background-size: cover;
+  
+     }
