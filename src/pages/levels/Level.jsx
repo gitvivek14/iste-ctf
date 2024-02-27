@@ -24,6 +24,9 @@ const Level = () => {
   }
   const {level} = useSelector((state)=>state.game)
   const {id} = useParams()
+  useEffect(() => {
+    dispatch(getQuestions(id));
+  },[id])
   if(level!=id){
     return(
       <div className='w-full flex items-center justify-center text-white' style={{fontFamily:"Hack"}}>
@@ -31,10 +34,7 @@ const Level = () => {
       </div>
     );
   }
-  useEffect(() => {
-    const {id} = useParams()
-    dispatch(getQuestions(id));
-  },[id])
+
   
   return (
     <div className='w-full h-screen max-w-max p-4 flex flex-col items-start justify-start mx-auto'>
