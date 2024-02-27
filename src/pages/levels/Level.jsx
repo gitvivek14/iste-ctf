@@ -32,8 +32,9 @@ const Level = () => {
     );
   }
   useEffect(() => {
+    const {id} = useParams()
     dispatch(getQuestions(id));
-  }, [id])
+  },[id])
   
   return (
     <div className='w-full h-screen max-w-max p-4 flex flex-col items-start justify-start mx-auto'>
