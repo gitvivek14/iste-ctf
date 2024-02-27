@@ -22,9 +22,9 @@ function App() {
           <Route path='/signup' element={<SignUp />}>
           </Route>
           <Route path='/home' element={
-            <PrivateRoute>
+            // <PrivateRoute>
               <Home></Home>
-            </PrivateRoute>
+            // </PrivateRoute>
           }></Route>
           <Route path='level/:id' element={
             <PrivateRoute>

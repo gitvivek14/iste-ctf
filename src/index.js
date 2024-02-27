@@ -24,12 +24,12 @@ const persistor = persistStore(store);
 ReactDOM.createRoot(document.getElementById('root')).render(
 
     <Provider store={store}>
+        <PersistGate  loading={null} persistor={persistor}>
       <BrowserRouter>
-    <PersistGate  loading={null} persistor={persistor}>
     <App />
     <Toaster></Toaster>
-    </PersistGate>
     </BrowserRouter>
+    </PersistGate>
     </Provider>
     
  
