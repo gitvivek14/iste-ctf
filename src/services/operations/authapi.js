@@ -81,7 +81,7 @@ export function login(email,password,navigate){
         } catch (error) {
             console.log("login api error");
             console.log(error);
-            toast.error("Login Error");
+            toast.error("Login F Error");
         }
         finally{
             dispatch(setLoading(false))
