@@ -47,19 +47,19 @@ export function login(email,password,navigate){
                 email,
                 password
             })
-        console.log("login a",response);
-        if(!response){
-            throw new Error(response.data.message)
-        }
+        // console.log("login a",response);
+        // if(!response){
+        //     throw new Error(response.data.message)
+        // }
         toast.success("Login Succesfull")
         try {
             const gresp = await apiconnector("POST","https://iste-ctf-backend.vercel.app/userd/user",{
                 email
             })
             console.log("printing gresp",gresp);
-            if(!gresp){
-                throw new Error(gresp.data.message)
-            }
+            // if(!gresp){
+            //     throw new Error(gresp.data.message)
+            // }
             console.log(gresp.data);
             console.log(gresp.data.user.game.questionNo);
             dispatch(setquestionNo(gresp.data.user.game.questionNo))
