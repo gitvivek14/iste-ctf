@@ -214,10 +214,10 @@ useEffect(() => {
                 </div>
                 <div>
                   <p className='text-white'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
+                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
                     ariatur facilis in minima iste harum laudantium fugit unde 
                     explicabo doloribus, atque qui provident natus voluptatibus 
-                    libero sapiente soluta, aperiam ex id.
+                    libero sapiente soluta, aperiam ex id. */}
 
                   </p>
                 </div>
@@ -263,10 +263,10 @@ useEffect(() => {
                 </div>
                 <div>
                   <p className='text-white'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
+                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
                     ariatur facilis in minima iste harum laudantium fugit unde 
                     explicabo doloribus, atque qui provident natus voluptatibus 
-                    libero sapiente soluta, aperiam ex id.
+                    libero sapiente soluta, aperiam ex id. */}
 
                   </p>
                 </div>
