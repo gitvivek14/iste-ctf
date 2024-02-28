@@ -37,16 +37,16 @@ const QuesModal = ({ setOpen, data }) => {
          justify-center items-center h-full'>
             <div className='flex flex-col gap-2 text-white bg-purple-700 bg-opacity-30 rounded-lg w-[800px]'>
                 <div className='place-self-end p-4'>
-                    <button onClick={()=> closeModal()}>
+                    {/* <button onClick={()=> closeModal()}>
                         <ImCross></ImCross>
-                    </button>
+                    </button> */}
                 </div>
                 <div className='w-full mx-auto flex flex-col items-center justify-center' style={{ fontFamily: "Hack" }}>
                     <div className='text-xl'>
                         Question
                     </div>
                     <div className='text-lg'>
-                        {`0${data.ques.level}`}
+                        {`0${data.ques.questionNo}`}
                     </div>
                 </div>
                 <div className='flex flex-col gap-5 items-center justify-evenly p-4 mx-auto'>
