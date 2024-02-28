@@ -54,10 +54,10 @@ const Level = () => {
           </CardContent>
         </Card>
       </div>
-      <div className='w-[100vw] h-full flex flex-col items-center justify-center p-4 flex-wrap gap-5 overflow-x-auto '>
+      <div className='w-full h-full flex flex-col items-center justify-center p-4 flex-wrap'>
         {
           questions.map((ques,idx)=>(
-            <div className='w-screen h-full shadow-lg' onClick={()=> handleCard({ques})} key={idx}>
+            <div className='w-11/12 h-full shadow-lg' onClick={()=> handleCard({ques})} key={idx}>
               <Card>
                 <CardContent>
                   <div className='flex flex-col items-center justify-center relative'>
