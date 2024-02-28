@@ -53,7 +53,11 @@ const QuesModal = ({ setOpen, data }) => {
                     <div>
                         <p style={{ fontFamily: "Hack" }}>
                             {
-                                data.ques.question
+                                data.ques.question.split('\n').map((ques)=>(
+                                    <div>
+                                        {ques}
+                                    </div>
+                                ))
                             }
 
                         </p>

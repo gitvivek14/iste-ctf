@@ -37,7 +37,7 @@ const Level = () => {
 
   
   return (
-    <div className='w-full h-screen max-w-max p-4 flex flex-col items-start justify-start mx-auto'>
+    <div className='w-11/12 h-screen max-w-max p-4 flex flex-wrap items-start justify-start mx-auto'>
       <div className='w-full flex items-center justify-center'>
         <Card className='w-96'>
           <CardContent>
@@ -54,7 +54,7 @@ const Level = () => {
           </CardContent>
         </Card>
       </div>
-      <div className='w-full h-full flex flex-col items-center justify-center p-4 flex-wrap'>
+      <div className='w-full h-full flex flex-col items-center justify-center p-4 max-w-max gap-2 mt-12'>
         {
           questions.map((ques,idx)=>(
             <div className='w-11/12 h-full shadow-lg' onClick={()=> handleCard({ques})} key={idx}>
@@ -73,7 +73,11 @@ const Level = () => {
                       {`0${ques.questionNo}`}
                     </div>
                     <div className='p-4'>
-                      {ques.question}
+                      {ques.question.split("\n").map((str,key)=>(
+                        <div key={key}>{str}
+                        <br></br>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </CardContent>
