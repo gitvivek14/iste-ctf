@@ -10,7 +10,7 @@ export function control(questionNo, level, email, ans){
         const toastId = toast.loading("Loading..")
         dispatch(setLoading(true))
         try {
-            const response = await apiconnector("POST","https://ctf-portal-c.vercel.app/game/control",{
+            const response = await apiconnector("POST","https://iste-ctf-backend.vercel.app/game/control",{
                 questionNo,
                 level,
                 email,
@@ -43,7 +43,7 @@ export function getQuestions(level){
         const toastId = toast.loading("Loading..")
         dispatch(setLoading(true))
         try {
-            const response = await apiconnector("POST","https://ctf-portal-c.vercel.app/game/getquestions",{
+            const response = await apiconnector("POST","https://iste-ctf-backend.vercel.app/game/getquestions",{
                 level:level
             })
             if(!response){
