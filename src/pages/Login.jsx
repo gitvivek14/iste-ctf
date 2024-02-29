@@ -53,7 +53,7 @@ const Login = () => {
                                             name='email'
                                         />
                                         <input
-                                            classNameName="input-is"
+                                            className="input-is"
                                             type="password"
                                             name='password'
                                             value={password}
