@@ -1,0 +1,4 @@
+.bghome{
+    background-image: url("../assets/card/ng-background-dot.png");
+    background-size: cover;
+    z-index: inherit; }

@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation'
 
 const ZeroLevel = () => {
   return (
-    <div className='w-screen h-screen max-w-max p-8 flex justify-center items-center mx-auto text-white'>
+    <div className='w-screen h-screen max-w-max p-8 flex justify-center items-center mx-auto text-white bghome'>
         <TypeAnimation
 
         sequence={[

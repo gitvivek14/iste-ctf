@@ -9,22 +9,29 @@ import { io } from "socket.io-client"
 import DashBoard from './pages/Dashboard/DashBoard'
 import ZeroLevel from './pages/levels/ZeroLevel'
 import PrivateRoute from './components/PrivateRoute'
-
-
+import PublicRoute from './components/PublicRoute'
 function App() {
   return (
     <>
-      <div className="w-[100vw] h-[100vh] min-h-screen bg-[#000814] overflow-y-auto bghome ">
+      <div className="w-[100vw] h-[100vh] min-h-screen bg-[#000814] overflow-y-auto">
         <Routes>
           <Route path='/' element={<Auth></Auth>}>
           </Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/signup' element={<SignUp />}>
+          <Route path='/login' element=
+            {
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }>
+          </Route>
+          <Route path='/signup' element={<PublicRoute>
+            <SignUp />
+          </PublicRoute>}>
           </Route>
           <Route path='/home' element={
-            // <PrivateRoute>
+            <PrivateRoute>
               <Home></Home>
-            // </PrivateRoute>
+            </PrivateRoute>
           }></Route>
           <Route path='level/:id' element={
             <PrivateRoute>

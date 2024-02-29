@@ -29,15 +29,13 @@ const Level = () => {
   },[id])
   if(level!=id){
     return(
-      <div className='w-full flex items-center justify-center text-white' style={{fontFamily:"Hack"}}>
+      <div className='w-full flex items-center justify-center text-white bghome' style={{fontFamily:"Hack"}}>
         Not Accessible
       </div>
     );
   }
-
-  
   return (
-    <div className='w-11/12 h-screen max-w-max p-4 flex flex-wrap items-start justify-start mx-auto'>
+    <div className='w-11/12 h-screen max-w-max p-4 flex flex-wrap items-start justify-start mx-auto bghome'>
       <div className='w-full flex items-center justify-center'>
         <Card className='w-96'>
           <CardContent>

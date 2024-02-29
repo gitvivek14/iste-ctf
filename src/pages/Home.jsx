@@ -1,23 +1,25 @@
 // import Card from '@/components/Card'
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import './Home.css'
 import img from "../assets/images/bg2.png"
-import { Card, CardContent, CardCover, Button , 
-  Modal,ModalDialog,DialogTitle,DialogContent,ModalClose,Input} from "@mui/joy"
+import {
+  Card, CardContent, CardCover, Button,
+  Modal, ModalDialog, DialogTitle, DialogContent, ModalClose, Input
+} from "@mui/joy"
 import { useNavigate } from 'react-router-dom'
-import { FcLock } from "react-icons/fc";
-import { FcUnlock } from "react-icons/fc";
-import { FaLock , FaUnlock } from "react-icons/fa";
-import { useDispatch,useSelector } from 'react-redux';
+import { FaLock, FaUnlock } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux';
 import game from "../assets/card/404.gif"
 import game1 from "../assets/card/bg.png"
-import jack from "../assets/card/jack.jpg"
-import lady from "../assets/card/lady.jpg"
+import jack from "../assets/card/jack1.jpg"
 import laptop from "../assets/card/laptop.jpg"
+import over from "../assets/card/four.jpg"
+import third from "../assets/card/thirdd.jpg"
 
 
 const Home = () => {
   const dispatch = useDispatch();
-  const {questionNo,level} =useSelector((state)=> state.game)
+  const { questionNo, level } = useSelector((state) => state.game)
   // console.log("printing",level);
   const [Locked, setLocked] = useState(true)
   const [Locked1, setLocked1] = useState(true)
@@ -25,287 +27,288 @@ const Home = () => {
   const [Locked3, setLocked3] = useState(true)
   const [open, setOpen] = useState(false)
   const [formData, setFormData] = useState({
-    answer:""
+    answer: ""
   })
   const navigate = useNavigate();
-  const {answer} = formData;
-  const onchange = (e)=>{
-    setFormData((prev)=>({
+  const { answer } = formData;
+  const onchange = (e) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]:e.target.value
+      [e.target.name]: e.target.value
     }))
   }
-  const handlesubmit = (e)=>{
+  const handlesubmit = (e) => {
     e.preventDefault();
     console.log(formData);
     setFormData({
-      answer:''
+      answer: ''
     })
-}
-useEffect(() => {
-}, [level])
+  }
+  useEffect(() => {
+  }, [level])
 
   return (
     <>
-    <div className='w-[100vw] h-[100vh] mx-auto text-white  flex flex-row 
-    items-stretch justify-between max-w-max mt-5 p-4'>
-      <div className='relative h-full'>
-        <div className='h-full'>
-          <div className='w-full h-full'>
-            <Card className='w-96 h-[100%]'>
-              <CardContent>
-                <div className='flex flex-col items-start justify-center w-full h-full'>
-                  <div className='flex flex-col items-start justify-center relative'>
-                    <div>
-                      <h1 className='text-red-600 font-bold text-xl' style={{ fontFamily: "Hack" }}>
-                        LEVEL
+      <div className='w-[100vw] h-[100vh] mx-auto text-white  flex flex-row 
+    items-stretch justify-between max-w-max mt-5 p-4 bghome z-10'>
+        <div className='relative h-full'>
+          <div className='h-full'>
+            <div className='w-full h-full'>
+              <Card className='w-96 h-[100%]'>
+                <CardCover>
+                  <img src={game1}></img>
+                </CardCover>
+                <CardContent>
+                  <div className='flex flex-col items-start justify-center w-full h-full'>
+                    <div className='flex flex-col items-start justify-center relative'>
+                      <div>
+                        <h1 className='text-red-600 font-bold text-xl' style={{ fontFamily: "Hack" }}>
+                          LEVEL
+                        </h1>
+                      </div>
+                      <div className='-top-3 text-white'>
+                        <p className='text-4xl' style={{ fontFamily: "Hack" }}>{
+                          `00`
+                        }</p>
+                      </div>
+                    </div>
+                    <div className='mt-10 text-white'>
+                      <h1 className='text-3xl align-top' style={{ fontFamily: "Hack" }}>
+                        The Reckon Begins
                       </h1>
+                      <span style={{ fontFamily: "Hack" }}>
+                        UNLOCKED///
+                      </span>
                     </div>
-                    <div className='-top-3'>
-                      <p className='text-4xl' style={{ fontFamily: "Hack" }}>{
-                        `00`
-                      }</p>
-                    </div>
-                  </div>
-
-                  <div className='mt-10'>
-                    <h1 className='text-black text-3xl align-top' style={{ fontFamily: "Hack" }}>
-                      The Reckon Begins
-                    </h1>
-                    <span style={{ fontFamily: "Hack" }}>
-                      UNLOCKED///
-                    </span>
-                  </div>
-
-                  <div className='mt-11'>
-                    <Button
-                      color="danger"
-                      onClick={()=>navigate('level/0')}
-                      variant="solid"
-                      size='lg'
-                      style={{ fontFamily: "Hack" }} 
-                    >
-                      Lets' Begin
+                    <div className='mt-11'>
+                      <Button
+                        color="danger"
+                        onClick={() => navigate('level/0')}
+                        variant="solid"
+                        size='lg'
+                        style={{ fontFamily: "Hack" }}
+                      >
+                        Lets' Begin
                       </Button>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
-      </div>
-      <div className='w-full h-full flex flex-col items-center
+        <div className='w-full h-full flex flex-col items-center
        justify-evenly'>
-        <div className='w-full flex flex-row items-center justify-between'>
-          <div className='w-full h-full'>
-            <Card className='w-80 shadow-md h-80'>
-              <CardCover className='bg-blue-900'>
-                {/* <img src={game} className='object-cover'></img> */}
-                <img src={jack}></img>
-              </CardCover>
-              <CardContent>
-               <div className='w-full h-full flex flex-col items-start justify-center relative'>
-                <div className='text-white'>
-                  <h1 className='text-white'>LEVEL</h1>
-                  <span className='text-3xl' style={{fontFamily:"Hack"}}>
-                    01
-                  </span>
-                </div>
-                <div>
-                  <p className='text-white'>
-                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
+          <div className='w-full flex flex-row items-center justify-between'>
+            <div className='w-full h-full'>
+              <Card className='w-80 shadow-md h-80'>
+                <CardCover className='bg-blue-900'>
+                  {/* <img src={game} className='object-cover'></img> */}
+                  <img src={jack}></img>
+                </CardCover>
+                <CardContent>
+                  <div className='w-full h-full flex flex-col items-start justify-between relative'>
+                    <div className='text-white'>
+                      <h1 className='text-white'>LEVEL</h1>
+                      <span className='text-3xl' style={{ fontFamily: "Hack" }}>
+                        01
+                      </span>
+                    </div>
+                    <div>
+                      <p className='text-white'>
+                        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
                     ariatur facilis in minima iste harum laudantium fugit unde 
                     explicabo doloribus, atque qui provident natus voluptatibus 
                     libero sapiente soluta, aperiam ex id. */}
 
-                  </p>
-                </div>
-               {
-                level==1 && (
-                  <div className='mt-6' >
-                  <Button
-                  color='danger'
-                  variant='solid'
-                  size='lg'
-                  style={{fontFamily:"Hack"}}
-                  onClick={()=> navigate('/level/1')}
-                  >
-                    Play
-                  </Button>
-                </div>
-                )
-               }
-                <div className='absolute text-white top-0 right-0 h-full'>
-                 <div className='text-2xl' >
-                 {
-                  level!=1 ? (<FaLock/>) : (<FaUnlock/>)
-                 }
-                 </div>
+                      </p>
+                    </div>
+                    {
+                      level == 1 && (
+                        <div className='mt-6' >
+                          <Button
+                            color='danger'
+                            variant='solid'
+                            size='lg'
+                            style={{ fontFamily: "Hack" }}
+                            onClick={() => navigate('/level/1')}
+                          >
+                            Play
+                          </Button>
+                        </div>
+                      )
+                    }
+                    <div className='absolute text-white top-0 right-0 h-full'>
+                      <div className='text-2xl' >
+                        {
+                          level != 1 ? (<FaLock />) : (<FaUnlock />)
+                        }
+                      </div>
 
-                </div>
-               </div>
-              </CardContent>
-            </Card>
-          </div>
-          <div>
-          <Card className='w-80 shadow-md h-80'>
-              <CardCover className='bg-blue-900'>
-                <img src={laptop}></img>
-              </CardCover>
-              <CardContent>
-               <div className='w-full h-full flex flex-col items-start justify-center relative'>
-                <div className='text-white'>
-                  <h1 className='text-white'>LEVEL</h1>
-                  <span className='text-3xl' style={{fontFamily:"Hack"}}>
-                    02
-                  </span>
-                </div>
-                <div>
-                  <p className='text-white'>
-                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div>
+              <Card className='w-80 shadow-md h-80'>
+                <CardCover className='bg-blue-900'>
+                  <img src={laptop}></img>
+                </CardCover>
+                <CardContent>
+                  <div className='w-full h-full flex flex-col items-start justify-between relative'>
+                    <div className='text-white'>
+                      <h1 className='text-white'>LEVEL</h1>
+                      <span className='text-3xl' style={{ fontFamily: "Hack" }}>
+                        02
+                      </span>
+                    </div>
+                    <div>
+                      <p className='text-white'>
+                        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
                     ariatur facilis in minima iste harum laudantium fugit unde 
                     explicabo doloribus, atque qui provident natus voluptatibus 
                     libero sapiente soluta, aperiam ex id. */}
 
-                  </p>
-                </div>
-               {
-                level==2 && (
-                  <div className='mt-6' >
-                  <Button
-                  color='danger'
-                  variant='solid'
-                  size='lg'
-                  style={{fontFamily:"Hack"}}
-                  onClick={()=> navigate('/level/2')}
-                  >
-                    Play
-                    
-                  </Button>
-                </div>
-                )
-               }
-                <div className='absolute text-white top-0 right-0 h-full'>
-                 <div className='text-2xl' >
-                 {
-                  level!=2 ? (<FaLock/>) : (<FaUnlock/>)
-                 }
-                 </div>
+                      </p>
+                    </div>
+                    {
+                      level == 2 && (
+                        <div className='mt-6' >
+                          <Button
+                            color='danger'
+                            variant='solid'
+                            size='lg'
+                            style={{ fontFamily: "Hack" }}
+                            onClick={() => navigate('/level/2')}
+                          >
+                            Play
 
-                </div>
-               </div>
-              </CardContent>
-            </Card>
+                          </Button>
+                        </div>
+                      )
+                    }
+                    <div className='absolute text-white top-0 right-0 h-full'>
+                      <div className='text-2xl' >
+                        {
+                          level != 2 ? (<FaLock />) : (<FaUnlock />)
+                        }
+                      </div>
+
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
+          <div className='flex flex-row items-center justify-between'>
+            <div>
+              <Card className='w-80 shadow-md h-80'>
+                <CardCover className='bg-blue-900'>
+                  <img src={third}></img>
+                </CardCover>
+                <CardContent>
+                  <div className='w-full h-full flex flex-col items-start justify-between relative'>
+                    <div className='text-white'>
+                      <h1 className='text-white'>LEVEL</h1>
+                      <span className='text-3xl' style={{ fontFamily: "Hack" }}>
+                        03
+                      </span>
+                    </div>
+                    <div>
+                      <p className='text-white'>
+                        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
+                    ariatur facilis in minima iste harum laudantium fugit unde 
+                    explicabo doloribus, atque qui provident natus voluptatibus 
+                    libero sapiente soluta, aperiam ex id. */}
+
+                      </p>
+                    </div>
+                    {
+                      level == 3 && (
+                        <div className='mt-6' >
+                          <Button
+                            color='danger'
+                            variant='solid'
+                            size='lg'
+                            style={{ fontFamily: "Hack" }}
+                            onClick={() => navigate('/level/3')}
+                          >
+                            Play
+
+                          </Button>
+                        </div>
+                      )
+                    }
+                    <div className='absolute text-white top-0 right-0 h-full'>
+                      <div className='text-2xl' >
+                        {
+                          level != 3 ? (<FaLock />) : (<FaUnlock />)
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div>
+              <Card className='w-80 shadow-md h-80'>
+                <CardCover className='bg-blue-900'>
+                  <img src={over}></img>
+                </CardCover>
+                <CardContent>
+                  <div className='w-full h-full flex flex-col items-start justify-between relative'>
+                    <div className='text-white'>
+                      <h1 className=' font-bold'>LEVEL</h1>
+                      <span className='text-3xl' style={{ fontFamily: "Hack" }}>
+                        04
+                      </span>
+                    </div>
+                    <div>
+                      <p className='text-white'>
+                        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
+                    ariatur facilis in minima iste harum laudantium fugit unde 
+                    explicabo doloribus, atque qui provident natus voluptatibus 
+                    libero sapiente soluta, aperiam ex id. */}
+
+                      </p>
+                    </div>
+                    {
+                      level == 4 && (
+                        <div className='mt-6' >
+                          <Button
+                            color='danger'
+                            variant='solid'
+                            size='lg'
+                            style={{ fontFamily: "Hack" }}
+                            onClick={() => navigate('/level/4')}
+                          >
+                            Play
+
+                          </Button>
+                        </div>
+                      )
+                    }
+                    <div className='absolute text-white top-0 right-0 h-full'>
+                      <div className='text-2xl' >
+                        {
+                          level != 4 ? (<FaLock />) : (<FaUnlock />)
+                        }
+                      </div>
+
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+
         </div>
-        <div className='flex flex-row items-center justify-between'>
-          <div>
-          <Card className='w-80 shadow-md h-80'>
-              <CardCover className='bg-blue-900'>
-                {/* <img src={img}></img> */}
-              </CardCover>
-              <CardContent>
-               <div className='w-full h-full flex flex-col items-start justify-center relative'>
-                <div className='text-white'>
-                  <h1 className='text-white'>LEVEL</h1>
-                  <span className='text-3xl' style={{fontFamily:"Hack"}}>
-                    03
-                  </span>
-                </div>
-                <div>
-                  <p className='text-white'>
-                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
-                    ariatur facilis in minima iste harum laudantium fugit unde 
-                    explicabo doloribus, atque qui provident natus voluptatibus 
-                    libero sapiente soluta, aperiam ex id. */}
-
-                  </p>
-                </div>
-               {
-                level==3 && (
-                  <div className='mt-6' >
-                  <Button
-                  color='danger'
-                  variant='solid'
-                  size='lg'
-                  style={{fontFamily:"Hack"}}
-                  onClick={()=> navigate('/level/3')}
-                  >
-                    Play
-                    
-                  </Button>
-                </div>
-                )
-               }
-                <div className='absolute text-white top-0 right-0 h-full'>
-                 <div className='text-2xl' >
-                 {
-                 level!=3 ? (<FaLock/>) : (<FaUnlock/>)
-                 }
-                 </div>
-                </div>
-               </div>
-              </CardContent>
-            </Card>
-          </div>
-          <div>
-          <Card className='w-80 shadow-md h-80'>
-              <CardCover className='bg-blue-900'>
-                {/* <img src={img}></img> */}
-              </CardCover>
-              <CardContent>
-               <div className='w-full h-full flex flex-col items-start justify-center relative'>
-                <div className='text-white'>
-                  <h1 className='text-white'>LEVEL</h1>
-                  <span className='text-3xl' style={{fontFamily:"Hack"}}>
-                    04
-                  </span>
-                </div>
-                <div>
-                  <p className='text-white'>
-                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. P
-                    ariatur facilis in minima iste harum laudantium fugit unde 
-                    explicabo doloribus, atque qui provident natus voluptatibus 
-                    libero sapiente soluta, aperiam ex id. */}
-
-                  </p>
-                </div>
-               {
-                level==4 && (
-                  <div className='mt-6' >
-                  <Button
-                  color='danger'
-                  variant='solid'
-                  size='lg'
-                  style={{fontFamily:"Hack"}}
-                  onClick={()=> navigate('/level/4')}
-                  >
-                    Play
-                    
-                  </Button>
-                </div>
-                )
-               }
-                <div className='absolute text-white top-0 right-0 h-full'>
-                 <div className='text-2xl' >
-                 {
-                  level!=4 ? (<FaLock/>) : (<FaUnlock/>)
-                 }
-                 </div>
-
-                </div>
-               </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
 
       </div>
-    
-    </div>
 
-<Modal disableAutoFocus={true} open={open} onClose={()=>setOpen(false)} 
+      {/* <Modal disableAutoFocus={true} open={open} onClose={()=>setOpen(false)} 
 className='w-[50%] h-full 
 mx-auto text-white flex items-center justify-center' slotProps={{backdrop:{
   sx:{
@@ -348,8 +351,8 @@ mx-auto text-white flex items-center justify-center' slotProps={{backdrop:{
 
 
 
-</Modal>
-</>
+</Modal> */}
+    </>
   )
 }
 
