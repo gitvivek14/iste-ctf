@@ -124,7 +124,7 @@ const Home = () => {
                       </p>
                     </div>
                     {
-                      level == 1 && (
+                      (level == 1 || level>1) && (
                         <div className='mt-6' >
                           <Button
                             color='danger'
@@ -141,11 +141,20 @@ const Home = () => {
                     <div className='absolute text-white top-0 right-0 h-full'>
                       <div className='text-2xl' >
                         {
-                          level != 1 ? (<FaLock />) : (<FaUnlock />)
+                          (level==1 || level>1) ? (<FaUnlock />) : (<FaLock />)
                         }
                       </div>
 
                     </div>
+                    {
+                      level>1 && (
+                        <div className='absolute text-green-500 top-64 right-0 h-full'>
+                          <div className='text-2xl' style={{fontFamily:"Hack"}}>
+                            Completed
+                            </div>
+                          </div>
+                      ) 
+                    }
                   </div>
                 </CardContent>
               </Card>
@@ -173,7 +182,7 @@ const Home = () => {
                       </p>
                     </div>
                     {
-                      level == 2 && (
+                      (level == 2 || level>2 )&& (
                         <div className='mt-6' >
                           <Button
                             color='danger'
@@ -191,11 +200,20 @@ const Home = () => {
                     <div className='absolute text-white top-0 right-0 h-full'>
                       <div className='text-2xl' >
                         {
-                          level != 2 ? (<FaLock />) : (<FaUnlock />)
+                          (level==2 || level>2) ? (<FaUnlock />) : (<FaLock />)
                         }
                       </div>
 
                     </div>
+                    {
+                      level>2 && (
+                        <div className='absolute text-green-500 top-64 right-0 h-full'>
+                          <div className='text-2xl' style={{fontFamily:"Hack"}}>
+                            Completed
+                            </div>
+                          </div>
+                      ) 
+                    }
                   </div>
                 </CardContent>
               </Card>
@@ -225,7 +243,7 @@ const Home = () => {
                       </p>
                     </div>
                     {
-                      level == 3 && (
+                      level >= 3 && (
                         <div className='mt-6' >
                           <Button
                             color='danger'
@@ -243,10 +261,19 @@ const Home = () => {
                     <div className='absolute text-white top-0 right-0 h-full'>
                       <div className='text-2xl' >
                         {
-                          level != 3 ? (<FaLock />) : (<FaUnlock />)
+                           (level==3 || level>3) ? (<FaUnlock />) : (<FaLock />)
                         }
                       </div>
                     </div>
+                    {
+                      level>3 && (
+                        <div className='absolute text-green-500 top-64 right-0 h-full'>
+                          <div className='text-2xl' style={{fontFamily:"Hack"}}>
+                            Completed
+                            </div>
+                          </div>
+                      ) 
+                    }
                   </div>
                 </CardContent>
               </Card>
@@ -274,7 +301,7 @@ const Home = () => {
                       </p>
                     </div>
                     {
-                      level == 4 && (
+                      level >= 4 && (
                         <div className='mt-6' >
                           <Button
                             color='danger'
@@ -292,11 +319,11 @@ const Home = () => {
                     <div className='absolute text-white top-0 right-0 h-full'>
                       <div className='text-2xl' >
                         {
-                          level != 4 ? (<FaLock />) : (<FaUnlock />)
+                           (level==4 || level>4) ? (<FaUnlock />) : (<FaLock />)
                         }
                       </div>
-
                     </div>
+                   
                   </div>
                 </CardContent>
               </Card>
