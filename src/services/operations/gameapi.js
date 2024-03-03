@@ -20,14 +20,19 @@ export function control(questionNo, level, email, ans){
                 throw new Error(response.data.message)
             }
             console.log("control",response)
-            if(response.data.success==false){
+            if(response.data.id==1){
                 toast.success("Already Submitted");
-                return;
+                return 2;
+            }else if(response.data.id==3){
+                toast.error("Wrong Answer")
+            }else{
+                toast.success("Updated Succesfull");
+                dispatch(setLevel(response.data.data.level))
+                dispatch(setScore(response.data.data.teamPoints))
+                dispatch(setquestionNo(response.data.data.questionNo))
+                return 1;
             }
-            toast.success("Updated Succesfull");
-            dispatch(setLevel(response.data.data.level))
-            dispatch(setScore(response.data.data.teamPoints))
-            dispatch(setquestionNo(response.data.data.questionNo))
+           
         } catch (error) {
             console.log(error); 
         }

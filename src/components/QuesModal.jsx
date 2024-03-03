@@ -1,11 +1,13 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState,useEffect } from 'react'
 import { ImCross } from "react-icons/im"
 import { useSelector, useDispatch } from 'react-redux'
 import { control } from "../services/operations/gameapi"
+import hackerbg from "../assets/card/bg.jpg"
 
 const QuesModal = ({ setOpen, data }) => {
     // console.log("modla data", data.ques);
     const dispatch = useDispatch();
+    const [disabled, setDisabled] = useState(false)
     const { email } = useSelector((state) => state.game)
     // console.log("email at modal", email);
     // console.log(data);
@@ -19,11 +21,17 @@ const QuesModal = ({ setOpen, data }) => {
             [e.target.name]: e.target.value,
         }))
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        dispatch(control(data.ques.questionNo, data.ques.level, email, flag))
+        const a = await dispatch(control(data.ques.questionNo, data.ques.level, email, flag))
+        console.log("printinng",a)
+        if(a==2){
+            setDisabled(true)
+        }
         // console.log(formData)
     }
+ 
+    
     const modalref = useRef();
     const closeModal = (e) => {
         if (modalref.current === e.target) {
@@ -35,7 +43,7 @@ const QuesModal = ({ setOpen, data }) => {
         <div ref={modalref} onClick={closeModal} className='w-screen  fixed inset-0 z-10
          bg-black bg-opacity-30 backdrop-blur-sm flex 
          justify-center items-center h-full'>
-            <div className='flex flex-col gap-2 text-white bg-purple-700 bg-opacity-30 rounded-lg w-[800px]'>
+            <div className='flex flex-col gap-2 text-white bg-purple-700 bg-opacity-10 rounded-lg w-[800px] level1' >
                 <div className='place-self-end p-4'>
                     {/* <button onClick={()=> closeModal()}>
                         <ImCross></ImCross>
@@ -74,6 +82,7 @@ const QuesModal = ({ setOpen, data }) => {
                                     value={flag}
                                     name='flag'
                                     onChange={handleOnChange}
+                                    disabled={disabled}
                                 />
                             </div>
                             <div className=' w-full mx-auto p-2'>

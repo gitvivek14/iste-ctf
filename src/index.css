@@ -16,5 +16,9 @@
    .bghome{
     background-image: url("../src/assets/card/bg--world.png");
     background-size: cover;
-  
      }
+    .level1{
+        background-image: url("../src/assets/card/bg.jpg");
+        background-size: cover;
+        opacity: 0.75;
+    }
