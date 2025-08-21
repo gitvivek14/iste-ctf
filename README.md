@@ -2,6 +2,9 @@
 
 This project is a web-based Capture The Flag (CTF) platform built with React and Tailwind CSS. It provides a complete framework for hosting CTF competitions, including user authentication, different game levels, a dashboard for tracking progress, and an administrative interface.
 
+# Live-Demo
+You can view a live demo of the project here: https://iste-ctf.vercel.app/
+
 ## About The Project
 
 The CTF-Platform is designed to offer an immersive and interactive experience for participants in cybersecurity competitions. It features a sleek and modern user interface, responsive design, and a variety of challenge types. The platform is built with a modular and scalable architecture, making it easy to customize and expand.
